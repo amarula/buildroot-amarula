@@ -72,4 +72,41 @@ To boot your newly created system:
 - close JM3 for sd boot.
 - power on the board.
 
+Testing graphics on i.CoreM6:
+============================
+
+Running kmscube
+# kmscube -D /dev/dri/card1
+
+Running glmark2-es2-drm
+# glmark2-es2-drm
+
+Running Qt5 Cinematic Demo:
+- for i.CoreM6 Starter Kit
+# export QT_QPA_EGLFS_KMS_CONFIG=/root/imx6qdl-icore.json
+- for i.CoreM6 ofcap10
+# export QT_QPA_EGLFS_KMS_CONFIG=/root/imx6qdl-icore-ofcap10.json
+- for i.CoreM6 ofcap12
+# export QT_QPA_EGLFS_KMS_CONFIG=/root/imx6qdl-icore-ofcap12.json
+# CinematicExperience-demo
+
+Testing VPU on i.CoreM6:
+=======================
+
+Find connector id using modetest
+# modetest -c
+
+Download video file and copy /mnt
+# wget http://media.xiph.org/mango/tears_of_steel_1080p.webm -P /mnt/
+# gst-launch-1.0 uridecodebin uri=file:///mnt/tears_of_steel_1080p.webm ! \
+> videoscale ! \
+> videoconvert ! \
+> video/x-raw,width=1280,height=800,pixel-aspect-ratio=1/1 ! \
+> kmssink connector-id=38 driver-name="imx-drm"  sync=false
+
+Play Video and Audio:
+
+# youtube-dl -f 136 https://www.youtube.com/watch?v=G6ruSHJgbPM -o Baahubali_Hamsa.mp4
+# gst-play-1.0 Baahubali_Hamsa.mp4 
+
 Enjoy!
