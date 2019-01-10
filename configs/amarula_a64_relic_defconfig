@@ -30,10 +30,11 @@ BR2_TARGET_UBOOT_SPL_NAME="spl/sunxi-spl.bin"
 # Kernel
 BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_CUSTOM_TARBALL=y
-BR2_LINUX_KERNEL_CUSTOM_TARBALL_LOCATION="$(call github,amarula,linux-amarula,v1.0a)/linux-amarula_v1.0a.tar.gz"
+BR2_LINUX_KERNEL_CUSTOM_TARBALL_LOCATION="$(call github,amarula,linux-amarula,WIP-A64-DSI-V3)/linux-amarula_WIP-A64-DSI-V3.tar.gz"
 BR2_LINUX_KERNEL_USE_ARCH_DEFAULT_CONFIG=y
 BR2_LINUX_KERNEL_DTS_SUPPORT=y
 BR2_LINUX_KERNEL_INTREE_DTS_NAME="allwinner/sun50i-a64-amarula-relic"
+BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="board/amarula/a64-relic/linux_gmac.fragment"
 BR2_LINUX_KERNEL_NEEDS_HOST_OPENSSL=y
 
 # Filesystem
