@@ -1937,6 +1937,8 @@ F:	package/wolfssl/
 N:	Shyam Saini <shyam.saini@amarulasolutions.com>
 F:	board/friendlyarm/nanopi-m4/
 F:	configs/nanopi_m4_defconfig
+F:	board/orangepi/orangepi-rk3399/
+F:	configs/orangepi_rk3399_defconfig
 
 N:	Simon Dawson <spdawson@gmail.com>
 F:	boot/at91bootstrap3/
