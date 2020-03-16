@@ -19,3 +19,4 @@ LAPACK_CONF_OPTS += -DBUILD_COMPLEX=OFF -DBUILD_COMPLEX16=OFF
 endif
 
 $(eval $(cmake-package))
+$(eval $(host-cmake-package))
