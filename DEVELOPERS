@@ -1151,6 +1151,7 @@ F:	configs/orangepi_win_defconfig
 F:	configs/orangepi_zero_plus2_defconfig
 F:	configs/pine64_defconfig
 F:	configs/pine64_sopine_defconfig
+F:	package/python-pybind11
 
 N:	James Hilliard <james.hilliard1@gmail.com>
 F:	package/gensio/

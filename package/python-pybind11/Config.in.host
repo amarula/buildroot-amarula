@@ -1,0 +1,7 @@
+config BR2_PACKAGE_HOST_PYTHON_PYBIND11
+	bool "host python-pybind11"
+	help
+	  Python module for Seamless operability between
+	  C++11 and Python.
+
+	  https://github.com/pybind/pybind11
