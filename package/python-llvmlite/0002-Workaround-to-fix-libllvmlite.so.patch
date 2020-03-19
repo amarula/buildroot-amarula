@@ -1,0 +1,39 @@
+From ad94d1806b22e238c1e54dc85bc0cb672398d8c6 Mon Sep 17 00:00:00 2001
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Thu, 27 Feb 2020 23:34:55 +0530
+Subject: [PATCH 2/2] Workaround to fix libllvmlite.so
+
+libllvmlite.so build require explicit -fPIC.
+
+gcc/aarch64-buildroot-linux-gnu/7.4.0/../../../../aarch64-buildroot-linux-gnu/bin/ld:
+/tmp/cc9YUaOF.ltrans0.ltrans.o: relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol
+`_ZTVN4llvm27DiagnosticPrinterRawOStreamE@@LLVM_8' which may bind externally can not
+be used when making a shared object; recompile with -fPIC
+
+gcc/aarch64-buildroot-linux-gnu/7.4.0/../../../../aarch64-buildroot-linux-gnu/bin/ld:
+/tmp/cc9YUaOF.ltrans0.ltrans.o(.text+0x2c): unresolvable R_AARCH64_ADR_PREL_PG_HI21
+relocation against symbol `_ZTVN4llvm27DiagnosticPrinterRawOStreamE@@LLVM_8'
+gcc/aarch64-buildroot-linux-gnu/7.4.0/../../../../aarch64-buildroot-linux-gnu/bin/ld:
+final link failed: bad value
+
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ ffi/Makefile.linux | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/ffi/Makefile.linux b/ffi/Makefile.linux
+index e7e2004..0974288 100644
+--- a/ffi/Makefile.linux
++++ b/ffi/Makefile.linux
+@@ -19,7 +19,7 @@ all: $(OUTPUT)
+ $(OUTPUT): $(SRC) $(INCLUDE)
+ 	# static-libstdc++ avoids runtime dependencies on a
+ 	# particular libstdc++ version.
+-	$(CXX) $(CXX_STATIC_LINK) -shared $(CXXFLAGS) $(SRC) -o $(OUTPUT) $(LDFLAGS) $(LIBS)
++	$(CXX) $(CXX_STATIC_LINK) -shared -fPIC $(CXXFLAGS) $(SRC) -o $(OUTPUT) $(LDFLAGS) $(LIBS)
+ 
+ clean:
+ 	rm -rf test $(OUTPUT)
+-- 
+2.17.1
+

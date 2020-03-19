@@ -1,0 +1,4 @@
+# md5, sha256 from https://pypi.python.org/pypi/librosa/json, sha256 for LICENSE is locally computed
+md5  bb8d594bfde1c9fad93c7aad3720be48  librosa-0.7.2.tar.gz
+sha256  656bbda80e98e6330db1ead79cd084b13a762284834d7603fcf7cf7c0dc65f3c  librosa-0.7.2.tar.gz
+sha256  062e7b255501e598ba040b507e077f51c8c91734c21520920f70eeb5c5280ae6  LICENSE

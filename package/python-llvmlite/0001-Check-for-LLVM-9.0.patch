@@ -1,0 +1,31 @@
+From adc5c5952d32f0bbb686565c3f766703c273b3bc Mon Sep 17 00:00:00 2001
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Wed, 18 Mar 2020 00:13:03 +0530
+Subject: [PATCH 1/2] Check for LLVM 9.0.
+
+This patch add support to check LLVM 9.0. since the
+buildroot support LLVM 9.0.1
+
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ ffi/build.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/ffi/build.py b/ffi/build.py
+index 9efb189..17e2475 100755
+--- a/ffi/build.py
++++ b/ffi/build.py
+@@ -109,8 +109,8 @@ def main_posix(kind, library_ext):
+ 
+     out = out.decode('latin1')
+     print(out)
+-    if not (out.startswith('8.0.') or out.startswith('7.0.')
+-            or out.startswith('7.1.')):
++    if not (out.startswith('9.0.') or out.startswith('8.0.')
++            or out.startswith('7.0.') or out.startswith('7.1.')):
+         msg = (
+             "Building llvmlite requires LLVM 7.0+ Be sure to "
+             "set LLVM_CONFIG to the right executable path.\n"
+-- 
+2.17.1
+

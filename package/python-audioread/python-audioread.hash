@@ -1,0 +1,5 @@
+# md5, sha256 from https://pypi.python.org/pypi/audioread/json
+md5  f8a67aac7eb5a0bb263851fc4ddbb527  audioread-2.1.8.tar.gz
+sha256  073904fabc842881e07bd3e4a5776623535562f70b1655b635d22886168dd168  audioread-2.1.8.tar.gz
+# sha256 for LICENSE is locally computed
+sha256  e00fff68a75a582132842e33426730699255986f1dec362252f7423db027019d  LICENSE

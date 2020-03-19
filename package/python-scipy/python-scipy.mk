@@ -25,6 +25,11 @@ PYTHON_SCIPY_DEPENDENCIES += \
 	openblas \
 	python-numpy
 
+HOST_PYTHON_SCIPY_DEPENDENCIES += \
+	host-python-numpy \
+	host-python-pybind11 \
+	host-lapack
+
 PYTHON_SCIPY_BUILD_OPTS = config_fc --fcompiler=gnu95
 PYTHON_SCIPY_ENV += F90=$(TARGET_CROSS)gfortran F77=$(TARGET_CROSS)gfortran
 
@@ -44,3 +49,4 @@ PYTHON_SCIPY_ENV += NPY_PKG_CONFIG_PATH=$(PYTHON_NUMPY_NPY_PKG_CONFIG_PATH)
 PYTHON_SCIPY_INSTALL_STAGING = YES
 
 $(eval $(python-package))
+$(eval $(host-python-package))

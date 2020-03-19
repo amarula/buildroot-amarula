@@ -1,0 +1,4 @@
+# md5, sha256 from https://pypi.python.org/pypi/numba/json, sha256 for LICENSE is locally computed
+md5  003726499829f5067cf0d98591ecb574  numba-0.48.0.tar.gz
+sha256  9d21bc77e67006b5723052840c88cc59248e079a907cc68f1a1a264e1eaba017  numba-0.48.0.tar.gz
+sha256  062e7b255501e598ba040b507e077f51c8c91734c21520920f70eeb5c5280ae6  LICENSE

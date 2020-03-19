@@ -1,0 +1,8 @@
+config BR2_PACKAGE_PYTHON_LLVMLITE
+	bool "python-llvmlite"
+	select BR2_PACKAGE_LLVM
+	help
+	  A lightweight LLVM python binding for
+	  writing JIT compilers.
+
+	  https://github.com/numba/llvmlite

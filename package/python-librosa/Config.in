@@ -1,0 +1,16 @@
+config BR2_PACKAGE_PYTHON_LIBROSA
+	bool "python-librosa"
+	depends on BR2_PACKAGE_PYTHON3
+	select BR2_PACKAGE_PYTHON_AUDIOREAD	# runtime, >= 2.0.0
+	select BR2_PACKAGE_PYTHON_NUMPY		# runtime, >= 1.15.0
+	select BR2_PACKAGE_PYTHON_SCIPY		# runtime, >= 1.0.0
+	select BR2_PACKAGE_PYTHON_SCIKIT_LEARN	# runtime, >= 0.14.0, != 0.19.0
+	select BR2_PACKAGE_PYTHON_JOBLIB	# runtime, >= 0.12
+	select BR2_PACKAGE_PYTHON_DECORATOR	# runtime, >= 3.0.0
+	select BR2_PACKAGE_PYTHON_RESAMPY	# runtime, >= 0.2.2
+	select BR2_PACKAGE_PYTHON_NUMBA		# runtime, >= 0.43.0
+	select BR2_PACKAGE_PYTHON_SOUNDFILE	# runtime, >= 0.9.0
+	help
+	  Python library for audio and music analysis.
+
+	  https://github.com/librosa/librosa

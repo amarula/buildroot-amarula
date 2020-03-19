@@ -1,0 +1,7 @@
+config BR2_PACKAGE_PYTHON_AUDIOREAD
+	bool "python-audioread"
+	help
+	  Python bindings for multi-library,
+	  cross-platform audio decoding.
+
+	  https://github.com/beetbox/audioread

@@ -1,0 +1,27 @@
+From e5833dbcbabab50bc1d70259f35dcb3887d4b144 Mon Sep 17 00:00:00 2001
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Sat, 15 Feb 2020 21:30:58 +0530
+Subject: [PATCH] remove pytest-runner requirement
+
+Setup does not actually require pytest-runner. As such, remove it.
+
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ setup.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/setup.py b/setup.py
+index bd90605..e33f640 100644
+--- a/setup.py
++++ b/setup.py
+@@ -37,7 +37,6 @@ setup(name='audioread',
+       packages=['audioread'],
+ 
+       setup_requires=[
+-          'pytest-runner'
+       ],
+ 
+       tests_require=[
+-- 
+2.17.1
+

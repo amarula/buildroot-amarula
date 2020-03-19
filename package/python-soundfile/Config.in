@@ -1,0 +1,9 @@
+config BR2_PACKAGE_PYTHON_SOUNDFILE
+	bool "python-soundfile"
+	select BR2_PACKAGE_LIBSNDFILE
+	select BR2_PACKAGE_PYTHON_CFFI # runtime
+	help
+	  Python bindings for SoundFile. SoundFile is an audio
+	  library based on libsndfile, CFFI, and NumPy
+
+	  https://github.com/bastibe/SoundFile

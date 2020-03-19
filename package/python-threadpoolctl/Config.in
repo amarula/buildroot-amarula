@@ -1,0 +1,6 @@
+config BR2_PACKAGE_PYTHON_THREADPOOLCTL
+	bool "python-threadpoolctl"
+	help
+	  Compiling Python code using LLVM.
+
+	  https://github.com/numba/numba

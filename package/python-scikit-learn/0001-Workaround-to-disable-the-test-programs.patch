@@ -1,0 +1,26 @@
+From 5717243cc14123e75efc716604c53b149246ae79 Mon Sep 17 00:00:00 2001
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Thu, 27 Feb 2020 17:27:26 +0530
+Subject: [PATCH] Workaround to disable the test programs
+
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ sklearn/_build_utils/__init__.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sklearn/_build_utils/__init__.py b/sklearn/_build_utils/__init__.py
+index 8c57982..1ebbd79 100644
+--- a/sklearn/_build_utils/__init__.py
++++ b/sklearn/_build_utils/__init__.py
+@@ -47,7 +47,7 @@ def cythonize_extensions(top_path, config):
+ 
+     # Fast fail before cythonization if compiler fails compiling basic test
+     # code even without OpenMP
+-    basic_check_build()
++    # basic_check_build()
+ 
+     # check simple compilation with OpenMP. If it fails scikit-learn will be
+     # built without OpenMP and the test test_openmp_supported in the test suite
+-- 
+2.17.1
+

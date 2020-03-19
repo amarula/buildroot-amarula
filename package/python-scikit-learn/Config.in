@@ -1,0 +1,10 @@
+config BR2_PACKAGE_PYTHON_SCIKIT_LEARN
+	bool "python-scikit-learn"
+	select BR2_PACKAGE_PYTHON_SCIPY		# runtime, >= 0.19.1
+	select BR2_PACKAGE_PYTHON_NUMPY		# runtime, >= 1.13.3
+	select BR2_PACKAGE_PYTHON_JOBLIB	# runtime, >= 0.11
+	select BR2_PACKAGE_PYTHON_THREADPOOLCTL	# runtime, >= 2.0.0
+	help
+	  A set of python modules for machine learning and data mining.
+
+	  https://github.com/scikit-learn/scikit-learn

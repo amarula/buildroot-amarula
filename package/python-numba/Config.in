@@ -1,0 +1,10 @@
+config BR2_PACKAGE_PYTHON_NUMBA
+	bool "python-numba"
+	depends on BR2_PACKAGE_PYTHON3		# runtime, >= 3.6
+	select BR2_PACKAGE_PYTHON_LLVMLITE      # runtime, >= 0.31.0dev0
+	select BR2_PACKAGE_PYTHON_NUMPY		# runtime, >= 1.15
+	select BR2_GCC_ENABLE_OPENMP
+	help
+	  NumPy aware dynamic Python compiler using LLVM.
+
+	  https://github.com/numba/numba

@@ -1,0 +1,9 @@
+config BR2_PACKAGE_PYTHON_JOBLIB
+	bool "python-joblib"
+	select BR2_PACKAGE_PYTHON_ZLIB if BR2_PACKAGE_PYTHON
+	select BR2_PACKAGE_PYTHON3_ZLIB if BR2_PACKAGE_PYTHON3
+	help
+	  Joblib is a set of tools to provide lightweight
+	  pipelining in Python.
+
+	  https://github.com/joblib/joblib

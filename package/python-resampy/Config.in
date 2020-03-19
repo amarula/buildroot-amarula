@@ -1,0 +1,11 @@
+config BR2_PACKAGE_PYTHON_RESAMPY
+	bool "python-resampy"
+	select BR2_PACKAGE_PYTHON_NUMPY		# runtime, >=1.10
+	select BR2_PACKAGE_PYTHON_SCIPY		# runtime, >=0.13
+	select BR2_PACKAGE_PYTHON_NUMBA		# runtime, >=0.32
+	select BR2_PACKAGE_PYTHON_SIX		# runtime, >=1.3
+	select BR2_PACKAGE_PYTHON_SETUPTOOLS	# runtime
+	help
+	  Python binding for Efficient sample rate conversion.
+
+	  https://github.com/bmcfee/resampy

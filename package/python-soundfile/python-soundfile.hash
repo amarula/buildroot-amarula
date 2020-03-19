@@ -1,0 +1,5 @@
+# md5, sha256 from https://pypi.python.org/pypi/SoundFile/json
+md5  a40320392dd3567fb7433f2ae41dfe1a  SoundFile-0.10.3.post1.tar.gz
+sha256  490cff42650733d1832728b937fe99fa1802896f5ef4d61bcf78cf7ebecb107b  SoundFile-0.10.3.post1.tar.gz
+# sha256 for LICENSE is locally computed
+sha256  b09431af469da8a987ec2f059f478b0429eac627716e13248d5880a869ff22f2  LICENSE

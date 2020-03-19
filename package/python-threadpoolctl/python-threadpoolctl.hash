@@ -1,0 +1,4 @@
+# md5, sha256 from https://pypi.python.org/pypi/numba/json, sha256 for LICENSE is locally computed
+md5  99bfceb7a7e9547c0ae98d74e382f328  threadpoolctl-2.0.0.tar.gz
+sha256  48b3e3e9ee079d6b5295c65cbe255b36a3026afc6dde3fb49c085cd0c004bbcf  threadpoolctl-2.0.0.tar.gz
+sha256  062e7b255501e598ba040b507e077f51c8c91734c21520920f70eeb5c5280ae6  LICENSE

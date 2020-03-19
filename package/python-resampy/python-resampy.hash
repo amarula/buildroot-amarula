@@ -1,0 +1,4 @@
+# md5, sha256 from https://pypi.python.org/pypi/numba/json, sha256 for LICENSE is locally computed
+md5  6987f88386b3bf69f48818bb5f21dd35  resampy-0.2.2.tar.gz
+sha256  62af020d8a6674d8117f62320ce9470437bb1d738a5d06cd55591b69b463929e  resampy-0.2.2.tar.gz
+sha256  062e7b255501e598ba040b507e077f51c8c91734c21520920f70eeb5c5280ae6  LICENSE
