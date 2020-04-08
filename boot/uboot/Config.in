@@ -202,6 +202,21 @@ config BR2_TARGET_UBOOT_NEEDS_ATF_BL31_ELF
 
 endchoice
 
+config BR2_TARGET_UBOOT_NEEDS_OPENSBI_FW_DYNAMIC
+	bool "U-Boot needs OpenSBI fw_dynamic"
+	depends on BR2_TARGET_OPENSBI
+	help
+	  A fw_dynamic firmware is particularly useful when the
+	  booting stage executed prior to OpenSBI firmware is
+	  capable of loading both the OpenSBI firmware and the
+	  booting stage binary to follow OpenSBI firmware.
+
+	  Some RISC-V platforms (such as SiFive FU540) encapsulate
+	  the fw_dynamic part of OpenSBI inside U-Boot. This option
+	  makes sure OpenSBI gets built prior to U-Boot, and that
+	  the OPENSBI variable pointing to OpenSBI's fw_dynamic
+	  binary, is passed during the Buildroot build.
+
 menu "U-Boot binary format"
 
 config BR2_TARGET_UBOOT_FORMAT_AIS
