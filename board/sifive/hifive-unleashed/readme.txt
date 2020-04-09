@@ -30,34 +30,28 @@ Once the build has finished you will have the following files:
     output/images/
     +-- fw_jump.bin
     +-- fw_jump.elf
-    +-- fw_payload.bin
-    +-- fw_payload.elf
+    +-- fw_dynamic.bin
+    +-- fw_dynamic.elf
+    +-- u-boot-spl.bin
+    +-- u-boot.itb
     +-- Image
     +-- rootfs.ext2
     +-- rootfs.ext4
     +-- rootfs.tar
     +-- sdcard.img
 
-
-Creating a bootable SD card with genimage
-=========================================
+Booting from MMC on the board
+=============================
 
 Buildroot builds a SD card image for you. All you need to do is dd the
 image to your SD card, which can be done with the following command:
 
-  $ sudo dd if=output/images/sdcard.img of=/dev/mmcblk0 bs=4096
+  $ sudo dd if=output/images/sdcard.img of=/dev/mmcblk0
 
-Booting the SD card on the board
-================================
-
-Make sure that the all DIP switches are set to the off position for
-default boot mode (MSEL mode = 1111), insert the SD card and power
-up the board.
+Make sure that the DIP switches MSEL[3:0] are set to 1011 for booting
+from MMC. Insert the SD card and power up the board.
 
 Connect the USB cable and open minicom (/dev/ttyUSB1, 115200, 8N1).
-
-See the 'SiFive HiFive Unleashed Getting Started Guide' for
-more details (https://www.sifive.com/documentation).
 
 You will get a warning reported by fdisk when you examine the SD card.
 This is because the genimage.cfg file doesn't specify the SD card size
@@ -73,3 +67,12 @@ You will see something like this at boot time:
 [    2.334824] GPT:190496 != 122142719
 [    2.338302] GPT: Use GNU Parted to correct GPT errors.
 [    2.343456]  mmcblk0: p1 p2
+
+Documentation
+=============
+See the 'SiFive HiFive Unleashed Getting Started Guide' for
+more details (https://www.sifive.com/documentation).
+
+See the Amarula Solutions BSP sifive wiki for information of
+usage and indetail steps.
+https://wiki.amarulasolutions.com/bsp/riscv/sifive/hifive-unleashed.html
