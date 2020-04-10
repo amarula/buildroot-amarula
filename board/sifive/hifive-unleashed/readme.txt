@@ -68,6 +68,57 @@ You will see something like this at boot time:
 [    2.338302] GPT: Use GNU Parted to correct GPT errors.
 [    2.343456]  mmcblk0: p1 p2
 
+Booting from SPI on the board
+=============================
+
+Program the SPI flash would require a little-overhead since the board
+doesn't support any flash firmware upgrade peripheral like USB-OTG and
+FU540 ROM aspects the loader1 partition would have GPT-UUID of
+5B193300-FC78-40CD-8002-E86C45580B47
+
+Due to these limitations, the flash programming offers below steps.
+
+Step 1: Build SPI defconfig
+
+  $ make hifive_unleashed_spi_defconfig
+  $ make
+
+  Follow "Booting from MMC on the board" section steps.
+
+Step 2: Create GPT over SPI flash
+
+  On Linux, create GPT over SPI flash
+
+  # sgdisk --clear \
+  > --set-alignment=2 \
+  > --new=1:40:2087 --change-name=1:loader1 --typecode=1:5B193300-FC78-40CD-8002-E86C45580B47 \
+  > --new=2:2088:10279 --change-name=2:loader2 --typecode=2:2E54B353-1271-4842-806F-E436D6AF6985 \
+  > --new=3:10536:65494 --change-name=3:rootfs --typecode=3:0FC63DAF-8483-4772-8E79-3D69D8477DE4 \
+  > /dev/mtdblock0
+
+  Power off and Power on the board.
+
+  On U-Boot, Setup ethernet.
+
+  Setup tftp on host and copy spi images that were built
+  from Step 1)
+
+  $ cp output/images/spi/* /tftpboot
+
+  Program the SPI flash, on u-boot prompt
+
+  # tftpboot $fdt_add_r upgrade_sf.scr
+  # source $fdt_add_r
+
+  Power off the board.
+
+Step 3: Set Boot from SPI
+
+  DIP switches MSEL[3:0] are set to 0110 for booting from SPI.
+
+  Power up the board and Connect the USB cable and open
+  minicom (/dev/ttyUSB1, 115200, 8N1).
+
 Documentation
 =============
 See the 'SiFive HiFive Unleashed Getting Started Guide' for

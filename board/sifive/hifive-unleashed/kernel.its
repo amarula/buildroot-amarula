@@ -1,0 +1,36 @@
+/dts-v1/;
+/ {
+	description = "FIT image with single Linux kernel, FDT blob";
+	#address-cells = <1>;
+
+	images {
+		kernel@0 {
+			description = "RISC-V Linux kernel";
+			data = /incbin/("./Image.gz");
+			type = "kernel";
+			arch = "riscv";
+			os = "linux";
+			compression = "gzip";
+			load = <0xA4000000>;
+			entry = <0xA4000000>;
+		};
+
+		fdt@0 {
+			description = "HiFive Unleashed A00 blob";
+			data = /incbin/("./hifive-unleashed-a00.dtb");
+			type = "flat_dt";
+			arch = "riscv";
+			compression = "none";
+		};
+	};
+
+	configurations {
+		default = "conf@0";
+
+		conf@0 {
+			description = "Boot Linux kernel, FDT blob";
+			kernel = "kernel@0";
+			fdt = "fdt@0";
+		};
+	};
+};
